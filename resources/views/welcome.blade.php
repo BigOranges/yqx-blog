@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
+<<<<<<< HEAD
 @section('content')
   <section class="container">
+=======
+
+@section('content')
+<section class="container">
+>>>>>>> dev
   <div class="content-wrap">
     <div class="content">
       <div class="jumbotron">
@@ -22,7 +28,11 @@
             <!--<div class="carousel-caption"> </div>--> 
           </div>
           <div class="item"> <a href="" target="_blank"><img src="home/images/banner/banner_03.jpg" alt="" class="img-responsive"></a> 
+<<<<<<< HEAD
             <!-- <div class="carousel-caption"> </div>  -->
+=======
+            <!--<div class="carousel-caption"> </div>--> 
+>>>>>>> dev
           </div>
         </div>
         <a class="left carousel-control" href="#focusslide" role="button" data-slide="prev" rel="nofollow"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">上一个</span> </a> <a class="right carousel-control" href="#focusslide" role="button" data-slide="next" rel="nofollow"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">下一个</span> </a> </div>
@@ -115,11 +125,18 @@
           <div role="tabpanel" class="tab-pane centre" id="centre">
           @if(!Auth::check())
             <h4>需要登录才能进入会员中心</h4>
+<<<<<<< HEAD
             <p> <a data-toggle="modal" data-target="#loginModal" class="btn btn-primary">立即登录</a> <a href="{{route('register')}}" class="btn btn-default">现在注册</a> </p>
           @else
             <a href="">详细信息</a>
             {{dump(Auth::user()->name)}}
           @endif  
+=======
+            <p> <a data-toggle="modal" data-target="#loginModal" class="btn btn-primary">立即登录</a> <a href="javascript:;" class="btn btn-default">现在注册</a> </p>
+          @else
+            {{dump(Auth::user()->name)}}
+          @endif
+>>>>>>> dev
           </div>
           <div role="tabpanel" class="tab-pane contact" id="contact">
             <h2>Email:<br />
@@ -148,13 +165,26 @@
     <div class="widget widget_hot">
       <h3>热门文章</h3>
       <ul>
+<<<<<<< HEAD
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+=======
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+>>>>>>> dev
       </ul>
     </div>
   </aside>
 </section>
+<<<<<<< HEAD
 @endsection
+=======
+
+@endsection
+>>>>>>> dev
