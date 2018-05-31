@@ -15,7 +15,7 @@
 <div id="box"></div>
 <div class="cent-box register-box">
     <div class="cent-box-header">
-        <h1 class="main-title hide"></h1>
+        <a href='/'><h1 class="main-title hide"></h1></a>
         <h2 class="sub-title">热爱生活 - 爱分享</h2>
     </div>
 
