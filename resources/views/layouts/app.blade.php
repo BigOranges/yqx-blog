@@ -27,13 +27,10 @@
 <script src="home/js/jquery-2.1.4.min.js"></script>
 <script src="home/js/nprogress.js"></script>
 <script src="home/js/jquery.lazyload.min.js"></script>
+<script src='wang.js'></script>
 <style type="text/css">
-    .edui-default{
-        width:860px;
-    }
-
     #mtk{
-      padding:20px;
+      padding:40px;
     }
 </style>
 >>>>>>> dev
@@ -203,10 +200,10 @@
 @section('css')
 
 @show
-</style>
+
 </head>
-@include('vendor.ueditor.assets')
 <body class="user-select">
+
 <header class="header">
   <nav class="navbar navbar-default" id="navbar">
     <div class="container">
@@ -339,13 +336,16 @@
   </ul>
 </div>
 
+
 <div class="modal fade bs-example-modal-lg"  role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content" id='mtk'>
-      <form>
+  
+      {!!Form::open(['url'=>action('QuestionController@create'),'method'=>'post'])!!}
+      <!-- <input type="hidden" name='token' value='{{csrf_token()}}'> -->
         <div class="form-group">
           <label for="exampleInputEmail1">标题</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="title">
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="title">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">话题&标签</label>
@@ -358,42 +358,39 @@
         </div>
         <div class="form-group">
           <label for="exampleInputFile">text</label>
-          <script id="container" name="content" type="text/plain"></script>
+          <div id='div3'></div>
           <script type="text/javascript">
-            var ue = UE.getEditor('container', {
-                    toolbars: [
-                            ['bold', 'italic', 'underline', 'strikethrough', 'blockquote', 'insertunorderedlist', 'insertorderedlist', 'justifyleft','justifycenter', 'justifyright',  'link', 'simpleupload', 'fullscreen']
-                        ],
-                    elementPathEnabled: false,
-                    enableContextMenu: false,
-                    autoClearEmptyNode:true,
-                    wordCount:false,
-                    imagePopup:false,
-                    autotypeset:{ indent: true,imageBlockLine: 'center' }
-                });
-            ue.ready(function() {
-                ue.execCommand('serverparam', '_token', '{{ csrf_token() }}'); // 设置 CSRF token.
-            });
+            var E = window.wangEditor
+            var editor2 = new E('#div3')
+            
+            editor2.customConfig.uploadImgShowBase64 = true
+            editor2.create()
           </script>
-
           <p class="help-block">Example block-level help text here.</p>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      {!!Form::close()!!}
+
     </div>
   </div>
 </div>
-<div id="app"></div>
+
 <script src="home/js/bootstrap.min.js"></script> 
 <script src="home/js/jquery.ias.js"></script> 
 <script src="home/js/scripts.js"></script>
-<script src='{{asset("js/app.js")}}'></script>
+
+<script src='{{asset("js/vue.js")}}'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript">
 $(".js-example-tokenizer").select2({
     tags: true,
     tokenSeparators: [',', ' ']
 })
+</script>
+
+<script type="text/javascript">
+
+  
 </script>
 </body>
 </html>
