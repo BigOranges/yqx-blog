@@ -10,6 +10,6 @@ class QuestionController extends Controller
     protected function create(Request $request){
 
 
-    	dump($request);
+    	
     }
 }

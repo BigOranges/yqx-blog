@@ -176,8 +176,8 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content" id='mtk'>
   
-      <form action='/question/create' method='POST' >
-      <input type="hidden" name='token' value='{{csrf_token()}}'>
+      {!!Form::open(['url'=>action('QuestionController@create'),'method'=>'post'])!!}
+      <!-- <input type="hidden" name='token' value='{{csrf_token()}}'> -->
         <div class="form-group">
           <label for="exampleInputEmail1">标题</label>
           <input type="text" class="form-control" id="exampleInputEmail1" placeholder="title">
@@ -204,7 +204,7 @@
           <p class="help-block">Example block-level help text here.</p>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      {!!Form::close()!!}
 
     </div>
   </div>
