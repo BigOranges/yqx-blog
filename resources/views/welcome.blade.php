@@ -1,13 +1,24 @@
 @extends('layouts.app')
 
-<<<<<<< HEAD
-@section('content')
-  <section class="container">
-=======
+
+@section('css')
+  <style type="text/css">
+      .img-circle{
+          border:1px solid #DDD;
+          width:20%; 
+      }
+
+      .user_info{
+        color:#47A2D0;
+        margin-top:10px;
+      }
+  </style>
+@endsection
 
 @section('content')
+
 <section class="container">
->>>>>>> dev
+
   <div class="content-wrap">
     <div class="content">
       <div class="jumbotron">
@@ -28,11 +39,11 @@
             <!--<div class="carousel-caption"> </div>--> 
           </div>
           <div class="item"> <a href="" target="_blank"><img src="home/images/banner/banner_03.jpg" alt="" class="img-responsive"></a> 
-<<<<<<< HEAD
+
             <!-- <div class="carousel-caption"> </div>  -->
-=======
+
             <!--<div class="carousel-caption"> </div>--> 
->>>>>>> dev
+
           </div>
         </div>
         <a class="left carousel-control" href="#focusslide" role="button" data-slide="prev" rel="nofollow"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">上一个</span> </a> <a class="right carousel-control" href="#focusslide" role="button" data-slide="next" rel="nofollow"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">下一个</span> </a> </div>
@@ -42,53 +53,21 @@
       </article>
       <div class="title">
         <h3>最新发布</h3>
-        <div class="more"><a href="">PHP</a><a href="">JavaScript</a><a href="">EmpireCMS</a><a href="">Apache</a><a href="">MySQL</a></div>
+        <div class="more" id='topic'>
+          <a  v-for='todo in todos' :href="todo.id">@{{todo.name}}</a>
+        </div>
       </div>
-      <article class="excerpt excerpt-1"><a class="focus" href="article.html" title=""><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></a>
+      @foreach($questions as $question)
+      <article class="excerpt excerpt-1"><a class="focus" href="article.html" title=""><img class="thumb" src="home/images/excerpt.jpg" alt=""></a>
         <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.html" title="">php如何判断一个日期的格式是否正确</a></h2>
+          <h2><a href="/question/detail/{{$question->id}}" title="">{{$question->title}}</a></h2>
         </header>
         <p class="meta">
-          <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
-          <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共120人围观</span> <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a></p>
-        <p class="note">可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ... </p>
+          <time class="time"><i class="glyphicon glyphicon-time"></i>{{$question->created_at}}</time>
+          <span class="views"><i class="glyphicon glyphicon-eye-open"></i>{{$question->followers_count}}</span> <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> {{$question->answers_count}}个回答</a></p>
+        <p class="note">{!!$question->body!!} ... </p>
       </article>
-      <article class="excerpt excerpt-2"><a class="focus" href="article.html" title=""><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></a>
-        <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.html" title="">php如何判断一个日期的格式是否正确</a></h2>
-        </header>
-        <p class="meta">
-          <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
-          <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共120人围观</span> <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a></p>
-        <p class="note">可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ... </p>
-      </article>
-      <article class="excerpt excerpt-3"><a class="focus" href="article.html" title=""><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></a>
-        <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.html" title="">php如何判断一个日期的格式是否正确</a></h2>
-        </header>
-        <p class="meta">
-          <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
-          <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共120人围观</span> <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a></p>
-        <p class="note">可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ... </p>
-      </article>
-      <article class="excerpt excerpt-4"><a class="focus" href="article.html" title=""><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></a>
-        <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.html" title="">php如何判断一个日期的格式是否正确</a></h2>
-        </header>
-        <p class="meta">
-          <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
-          <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共120人围观</span> <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a></p>
-        <p class="note">可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ... </p>
-      </article>
-      <article class="excerpt excerpt-5"><a class="focus" href="article.html" title=""><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></a>
-        <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.html" title="">php如何判断一个日期的格式是否正确</a></h2>
-        </header>
-        <p class="meta">
-          <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
-          <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共120人围观</span> <a class="comment" href="article.html#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a></p>
-        <p class="note">可以用strtotime()把日期（$date）转成时间戳，再用date()按需要验证的格式转成一个日期，来跟$date比较是否相同来验证这个日期的格式是否是正确的。所以要验证日期格式 ... </p>
-      </article>
+      @endforeach
       <nav class="pagination" style="display: none;">
         <ul>
           <li class="prev-page"></li>
@@ -124,23 +103,23 @@
           </div>
           <div role="tabpanel" class="tab-pane centre" id="centre">
           @if(!Auth::check())
-            <h4>需要登录才能进入会员中心</h4>
-<<<<<<< HEAD
-            <p> <a data-toggle="modal" data-target="#loginModal" class="btn btn-primary">立即登录</a> <a href="{{route('register')}}" class="btn btn-default">现在注册</a> </p>
-          @else
-            <a href="">详细信息</a>
-            {{dump(Auth::user()->name)}}
-          @endif  
-=======
+            <h4>需要登录才能进入会员中心</h4> 
             <p> <a data-toggle="modal" data-target="#loginModal" class="btn btn-primary">立即登录</a> <a href="javascript:;" class="btn btn-default">现在注册</a> </p>
           @else
-            {{dump(Auth::user()->name)}}
+            <div class="col-md-12">
+            
+              <img src="{{Auth::user()->avatar}}" alt="" class="img-circle center-block">
+            </div>
+            <div class='col-md-12' style='text-align:center'>
+              <p class='user_info'><a >{{Auth::user()->name}}</a></p>
+              <p class='user_info'>粉丝：{{Auth::user()->followings_count}}</p>  
+            </div>
           @endif
->>>>>>> dev
+
           </div>
           <div role="tabpanel" class="tab-pane contact" id="contact">
             <h2>Email:<br />
-              <a href="mailto:admin@ylsat.com" data-toggle="tooltip" data-placement="bottom" title="admin@ylsat.com">admin@ylsat.com</a></h2>
+              <a href="mailto:17600275092@163.com" data-toggle="tooltip" data-placement="bottom" title="17600275092@163.com">17600275092@163.com</a></h2>
           </div>
         </div>
       </div>
@@ -165,26 +144,38 @@
     <div class="widget widget_hot">
       <h3>热门文章</h3>
       <ul>
-<<<<<<< HEAD
+
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="home/images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
-=======
+
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
         <li><a href=""><span class="thumbnail"><img class="thumb" data-original="images/excerpt.jpg" src="home/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
->>>>>>> dev
+
       </ul>
     </div>
   </aside>
 </section>
-<<<<<<< HEAD
-@endsection
-=======
 
 @endsection
->>>>>>> dev
+
+@section('script')
+<script type="text/javascript">
+  var topics = {!!$topics!!};
+  var topic = topics.slice(0,5);
+   var to = new Vue({
+      el:'#topic',
+      data:{
+        todos:topic   
+      }
+  })
+
+</script>
+@endsection
+
+

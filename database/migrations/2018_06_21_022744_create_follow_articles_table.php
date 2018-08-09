@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticleTopicTable extends Migration
+class CreateFollowArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateArticleTopicTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_topic', function (Blueprint $table) {
+        Schema::create('follow_articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('article_id')->unsigned()->index();
-            $table->integer('topics_id')->unsigned()->index();
+            $table->integer('user_id')->index();
+            $table->integer('articles_id')->index();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateArticleTopicTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('article_topic');
+        Schema::dropIfExists('follow_articles');
     }
 }

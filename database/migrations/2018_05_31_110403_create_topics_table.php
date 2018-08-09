@@ -19,6 +19,7 @@ class CreateTopicsTable extends Migration
             $table->string('topic_pic')->comment('话题图片');
             $table->text('desc')->nullable()->comment('话题简介');
             $table->integer('questions_count')->default(0)->comment('话题下问题数量');
+            $table->integer('articles_count')->default(0)->comment('话题下文章数量');
             $table->integer('followers_count')->default(0)->comment('关注次数');
             $table->timestamps();
         });
